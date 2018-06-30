@@ -1,5 +1,5 @@
 # Vehicle Path Planning Algorithm
-In this project, our goal is to design a path planning algorithm that is able to a car around a simulated highway scenario, including traffic and given waypoints, telemetry, and sensor fusion data.
+In this project, our goal is to design a path planning algorithm that is able to a car around a simulated highway scenario, including traffic and given waypoints, telemetry, and sensor fusion data. Our goal is to safely navigate around the virtual highway with other traffic that is driving +-10 MPH of the 50 MPH speed limit
 
 ---
 
@@ -41,3 +41,33 @@ To make the work less complicated to the spline calculation based on those point
 In order to ensure more continuity on the trajectory (in addition to adding the last two point of the pass trajectory to the spline adjustment), the pass trajectory points are copied to the new trajectory.
 The rest of the points are calculated by evaluating the spline and transforming the output coordinates to back from local coordinates.
 - Worth noticing the change in the velocity of the car (lines 395 to 401). The speed change is decided on the behavior part of the code, but it is used in that part to increase/decrease speed on every trajectory points instead of doing it for the complete trajectory.
+
+---
+
+## Basic Build Instructions
+
+1. Clone this repo.
+2. Make a build directory: `mkdir build && cd build`
+3. Compile: `cmake .. && make`
+4. Run it: `./path_planning`.
+
+## Dependencies
+
+* cmake >= 3.5
+  * All OSes: [click here for installation instructions](https://cmake.org/install/)
+* make >= 4.1
+  * Linux: make is installed by default on most Linux distros
+  * Mac: [install Xcode command line tools to get make](https://developer.apple.com/xcode/features/)
+  * Windows: [Click here for installation instructions](http://gnuwin32.sourceforge.net/packages/make.htm)
+* gcc/g++ >= 5.4
+  * Linux: gcc / g++ is installed by default on most Linux distros
+  * Mac: same deal as make - [install Xcode command line tools]((https://developer.apple.com/xcode/features/)
+  * Windows: recommend using [MinGW](http://www.mingw.org/)
+* [uWebSockets](https://github.com/uWebSockets/uWebSockets)
+  * Run either `install-mac.sh` or `install-ubuntu.sh`.
+  * If you install from source, checkout to commit `e94b6e1`, i.e.
+    ```
+    git clone https://github.com/uWebSockets/uWebSockets 
+    cd uWebSockets
+    git checkout e94b6e1
+    ```
